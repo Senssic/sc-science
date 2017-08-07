@@ -14,8 +14,9 @@ import java.util.zip.ZipEntry;
 public class FindClassInPath {
     private static String CLASS_FILE_TO_FIND =
             "com.google.common.collect.ImmutableSet";//形式  com/google/common/collect/ImmutableSet.class or com.google.common.collect.ImmutableSet
-    private static String FILE_TO_PATH = "C:\\Users\\Administrator\\Desktop\\prelog\\lib2\\lib";
+    private static String FILE_TO_PATH = "C:\\Users\\Administrator\\Desktop\\prelog\\lib";
     private static List<String> foundIn = new LinkedList<String>();
+    private static List<String> foundNotIn = new LinkedList<String>();
 
     public static void main(String[] args) {
         if (!CLASS_FILE_TO_FIND.endsWith(".class")) {
@@ -28,10 +29,13 @@ public class FindClassInPath {
         File start = new File(FILE_TO_PATH);
 
         search(start);
-        System.out.println("------RESULTS------");
+        System.out.println("---total count:"+foundNotIn.size()+"---");
+
+        System.out.println("******RESULTS******");
         for (String s : foundIn) {
             System.out.println(s);
         }
+        System.out.println("---total found count:" + foundIn.size() + "---");
     }
 
     private static void search(File start) {
@@ -57,6 +61,7 @@ public class FindClassInPath {
     private static void searchJar(File f) {
         try {
             System.out.println("Searching: " + f.getPath());
+            foundNotIn.add(f.getPath());
             JarFile jar = new JarFile(f);
             ZipEntry e = jar.getEntry(CLASS_FILE_TO_FIND);
             if (e == null) {
