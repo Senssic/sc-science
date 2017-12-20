@@ -40,7 +40,7 @@ public class FindClassInPath {
     private static void search(File start) {
         try {
             final FileFilter filter = new FileFilter() {
-
+                @Override
                 public boolean accept(File pathname) {
                     return pathname.getName().endsWith(".jar") || pathname.isDirectory();
                 }
