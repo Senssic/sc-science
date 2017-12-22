@@ -1,5 +1,9 @@
 package com.sc.science.designmode.fitdesign.iterator;
 
+/**
+ * 具体迭代器实现迭代器接口
+ * @author qiss
+ */
 public class BookShelfIterator implements Iterator {
     private BookShelf bookShelf;
     private int index;
