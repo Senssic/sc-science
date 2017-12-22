@@ -118,7 +118,7 @@ public class FunctionalTest {
     @Test
     public void reflect() {
         InvocationHandler invocationHandler = new MyInvocationHandler();
-        // Guava Dynamic Proxy implement
+        // Guava Dynamic proxy implement
         IFoo foo = Reflection.newProxy(IFoo.class, invocationHandler);
         foo.doSomething();
         //jdk Dynamic proxy implement
