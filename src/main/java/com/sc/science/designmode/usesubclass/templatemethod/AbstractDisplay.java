@@ -1,14 +1,30 @@
 package com.sc.science.designmode.usesubclass.templatemethod;
 
-public abstract class AbstractDisplay { // 抽象类AbstractDisplay
-    public abstract void open();        // 交给子类去实现的抽象方法(1) open
-    public abstract void print();       // 交给子类去实现的抽象方法(2) print
-    public abstract void close();       // 交给子类去实现的抽象方法(3) close
-    public final void display() {       // 本抽象类中实现的display方法
-        open();                         // 首先打开…
-        for (int i = 0; i < 5; i++) {   // 循环调用5次print
-            print();                    
+/**
+ * 抽象类
+ * @author qiss
+ */
+public abstract class AbstractDisplay {
+    /**
+     * 抽象方法open
+     */
+    public abstract void open();
+
+    /**
+     * 抽象方法print
+     */
+    public abstract void print();
+
+    /**
+     * 抽象方法close
+     */
+    public abstract void close();
+
+    public final void display() {//模版方法,模版方法可以使用各个实例化好的子类做不同事情
+        open();
+        for (int i = 0; i < 5; i++) {
+            print();
         }
-        close();                        // …最后关闭。这就是display方法所实现的功能
+        close();
     }
 }
