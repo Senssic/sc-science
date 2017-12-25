@@ -1,11 +1,19 @@
 package com.sc.science.designmode.visitdatastructure.chainofresponsibility;
 
+/**
+ * 职责链四
+ *
+ * @author qiss
+ */
 public class LimitSupport extends Support {
     private int limit;                              // 可以解决编号小于limit的问题
+
     public LimitSupport(String name, int limit) {   // 构造函数
         super(name);
         this.limit = limit;
     }
+
+    @Override
     protected boolean resolve(Trouble trouble) {    // 解决问题的方法
         if (trouble.getNumber() < limit) {
             return true;
