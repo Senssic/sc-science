@@ -3,33 +3,47 @@ package com.sc.science.designmode.uniformity.composite;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * 复合物角色,可以在其中放入Leaf角色和Composite角色
+ *
+ * @author qiss
+ */
 public class Directory extends Entry {
-    private String name;                    // 文件夹的名字
-    private ArrayList directory = new ArrayList();      // 文件夹中目录条目的集合
+    private String name;
+    private ArrayList directory = new ArrayList();
+
     public Directory(String name) {         // 构造函数
         this.name = name;
     }
+
+    @Override
     public String getName() {               // 获取名字
         return name;
     }
-    public int getSize() {                  // 获取大小
+
+    @Override
+    public int getSize() {
         int size = 0;
         Iterator it = directory.iterator();
         while (it.hasNext()) {
-            Entry entry = (Entry)it.next();
+            Entry entry = (Entry) it.next();
             size += entry.getSize();
         }
         return size;
     }
-    public Entry add(Entry entry) {         // 增加目录条目
+
+    @Override
+    public Entry add(Entry entry) {
         directory.add(entry);
         return this;
     }
-    protected void printList(String prefix) {       // 显示目录条目一览
+
+    @Override
+    protected void printList(String prefix) {
         System.out.println(prefix + "/" + this);
         Iterator it = directory.iterator();
         while (it.hasNext()) {
-            Entry entry = (Entry)it.next();
+            Entry entry = (Entry) it.next();
             entry.printList(prefix + "/" + name);
         }
     }
