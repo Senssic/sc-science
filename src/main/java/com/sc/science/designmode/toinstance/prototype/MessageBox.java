@@ -3,11 +3,16 @@ package com.sc.science.designmode.toinstance.prototype;
 
 import com.sc.science.designmode.toinstance.prototype.framework.Product;
 
+/**
+ * 原型实例messageBox,提供克隆方法
+ * @author qiss
+ */
 public class MessageBox implements Product {
     private char decochar;
     public MessageBox(char decochar) {
         this.decochar = decochar;
     }
+    @Override
     public void use(String s) {
         int length = s.getBytes().length;
         for (int i = 0; i < length + 4; i++) {
@@ -20,6 +25,7 @@ public class MessageBox implements Product {
         }
         System.out.println("");
     }
+    @Override
     public Product createClone() {
         Product p = null;
         try {

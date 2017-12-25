@@ -4,35 +4,48 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
+/**
+ * 实际建造者HTMLBuilder
+ *
+ * @author qiss
+ */
 public class HTMLBuilder extends Builder {
-    private String filename;                                                        // 文件名
-    private PrintWriter writer;                                                     // 用于编写文件的PrintWriter
-    public void makeTitle(String title) {                                           // HTML文件的标题
-        filename = title + ".html";                                                 // 将标题作为文件名
+    private String filename;
+    private PrintWriter writer;
+
+    @Override
+    public void makeTitle(String title) {
+        filename = title + ".html";
         try {
-            writer = new PrintWriter(new FileWriter(filename));                     // 生成 PrintWriter
+            writer = new PrintWriter(new FileWriter(filename));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        writer.println("<html><head><title>" + title + "</title></head><body>");    // 输出标题
+        writer.println("<html><head><title>" + title + "</title></head><body>");
         writer.println("<h1>" + title + "</h1>");
     }
-    public void makeString(String str) {                                            // HTML文件中的字符串
-        writer.println("<p>" + str + "</p>");                                       // 用<p>标签输出
+
+    @Override
+    public void makeString(String str) {
+        writer.println("<p>" + str + "</p>");
     }
-    public void makeItems(String[] items) {                                         // HTML文件中的条目
-        writer.println("<ul>");                                                     // 用<ul>和<li>输出
+
+    @Override
+    public void makeItems(String[] items) {
+        writer.println("<ul>");
         for (int i = 0; i < items.length; i++) {
             writer.println("<li>" + items[i] + "</li>");
         }
         writer.println("</ul>");
     }
-    public void close() {                                                           // 完成文档
-        writer.println("</body></html>");                                           // 关闭标签
-        writer.close();                                                             // 关闭文件
+
+    @Override
+    public void close() {
+        writer.println("</body></html>");
+        writer.close();
     }
-    public String getResult() {                                                     // 编写完成的文档
-        return filename;                                                            // 返回文件名
+
+    public String getResult() {
+        return filename;
     }
 }

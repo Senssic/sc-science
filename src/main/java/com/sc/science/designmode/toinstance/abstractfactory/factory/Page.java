@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 
+/**
+ * 抽象产品page
+ * @author qiss
+ */
 public abstract class Page {
     protected String title;
     protected String author;

@@ -14,7 +14,7 @@ public class Main {
             System.out.println("Example 2: java Main tablefactory.TableFactory");
             System.exit(0);
         }
-        Factory factory = Factory.getFactory(args[0]);
+        Factory factory = Factory.getFactory(args[0]);//此时已为具体的工厂类
 
         Link people = factory.createLink("人民日报", "http://www.people.com.cn/");
         Link gmw = factory.createLink("光明日报", "http://www.gmw.cn/");

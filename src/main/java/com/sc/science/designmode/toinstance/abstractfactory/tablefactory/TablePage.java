@@ -5,10 +5,17 @@ import com.sc.science.designmode.toinstance.abstractfactory.factory.Page;
 
 import java.util.Iterator;
 
+/**
+ * 具体产品TablePage
+ *
+ * @author qiss
+ */
 public class TablePage extends Page {
     public TablePage(String title, String author) {
         super(title, author);
     }
+
+    @Override
     public String makeHTML() {
         StringBuffer buffer = new StringBuffer();
         buffer.append("<html><head><title>" + title + "</title></head>\n");
@@ -17,7 +24,7 @@ public class TablePage extends Page {
         buffer.append("<table width=\"80%\" border=\"3\">\n");
         Iterator it = content.iterator();
         while (it.hasNext()) {
-            Item item = (Item)it.next();
+            Item item = (Item) it.next();
             buffer.append("<tr>" + item.makeHTML() + "</tr>");
         }
         buffer.append("</table>\n");

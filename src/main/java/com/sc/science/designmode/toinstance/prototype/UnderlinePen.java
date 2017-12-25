@@ -2,11 +2,16 @@ package com.sc.science.designmode.toinstance.prototype;
 
 import com.sc.science.designmode.toinstance.prototype.framework.Product;
 
+/**
+ *UnderlinePen实例,提供克隆方法
+ * @author qiss
+ */
 public class UnderlinePen implements Product {
     private char ulchar;
     public UnderlinePen(char ulchar) {
         this.ulchar = ulchar;
     }
+    @Override
     public void use(String s) {
         int length = s.getBytes().length;
         System.out.println("\""  + s + "\"");
@@ -16,6 +21,7 @@ public class UnderlinePen implements Product {
         }
         System.out.println("");
     }
+    @Override
     public Product createClone() {
         Product p = null;
         try {
