@@ -2,18 +2,26 @@ package com.sc.science.designmode.separate.strategy;
 
 import java.util.Random;
 
+/**
+ * 具体策略的实现方式一
+ *
+ * @author qiss
+ */
 public class ProbStrategy implements Strategy {
     private Random random;
     private int prevHandValue = 0;
     private int currentHandValue = 0;
     private int[][] history = {
-        { 1, 1, 1, },
-        { 1, 1, 1, },
-        { 1, 1, 1, },
+            {1, 1, 1,},
+            {1, 1, 1,},
+            {1, 1, 1,},
     };
+
     public ProbStrategy(int seed) {
         random = new Random(seed);
     }
+
+    @Override
     public Hand nextHand() {
         int bet = random.nextInt(getSum(currentHandValue));
         int handvalue = 0;
@@ -28,6 +36,7 @@ public class ProbStrategy implements Strategy {
         currentHandValue = handvalue;
         return Hand.getHand(handvalue);
     }
+
     private int getSum(int hv) {
         int sum = 0;
         for (int i = 0; i < 3; i++) {
@@ -35,6 +44,8 @@ public class ProbStrategy implements Strategy {
         }
         return sum;
     }
+
+    @Override
     public void study(boolean win) {
         if (win) {
             history[prevHandValue][currentHandValue]++;
