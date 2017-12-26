@@ -1,38 +1,26 @@
 package com.sc.science.designmode.classsexpression.interpreter;
 
-import java.util.StringTokenizer;
+import java.util.HashMap;
+import java.util.Map;
 
+/**
+ * 环境
+ *
+ * @author qiss
+ */
 public class Context {
-    private StringTokenizer tokenizer;
-    private String currentToken;
-    public Context(String text) {
-        tokenizer = new StringTokenizer(text);
-        nextToken();
+
+    private Map<Variable, Boolean> map = new HashMap<Variable, Boolean>();
+
+    public void assign(Variable var, boolean value) {
+        map.put(var, new Boolean(value));
     }
-    public String nextToken() {
-        if (tokenizer.hasMoreTokens()) {
-            currentToken = tokenizer.nextToken();
-        } else {
-            currentToken = null;
+
+    public boolean lookup(Variable var) throws IllegalArgumentException {
+        Boolean value = map.get(var);
+        if (value == null) {
+            throw new IllegalArgumentException();
         }
-        return currentToken;
-    }
-    public String currentToken() {
-        return currentToken;
-    }
-    public void skipToken(String token) throws ParseException {
-        if (!token.equals(currentToken)) {
-            throw new ParseException("Warning: " + token + " is expected, but " + currentToken + " is found.");
-        }
-        nextToken();
-    }
-    public int currentNumber() throws ParseException {
-        int number = 0;
-        try {
-            number = Integer.parseInt(currentToken);
-        } catch (NumberFormatException e) {
-            throw new ParseException("Warning: " + e);
-        }
-        return number;
+        return value.booleanValue();
     }
 }
