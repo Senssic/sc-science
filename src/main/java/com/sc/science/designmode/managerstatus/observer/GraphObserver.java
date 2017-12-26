@@ -1,6 +1,12 @@
 package com.sc.science.designmode.managerstatus.observer;
 
+/**
+ * 具体观察者2
+ *
+ * @author qiss
+ */
 public class GraphObserver implements Observer {
+    @Override
     public void update(NumberGenerator generator) {
         System.out.print("GraphObserver:");
         int count = generator.getNumber();

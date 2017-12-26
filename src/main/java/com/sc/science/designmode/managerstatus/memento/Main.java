@@ -4,6 +4,11 @@ package com.sc.science.designmode.managerstatus.memento;
 import com.sc.science.designmode.managerstatus.memento.game.Gamer;
 import com.sc.science.designmode.managerstatus.memento.game.Memento;
 
+/**
+ * 执行人角色
+ *
+ * @author qiss
+ */
 public class Main {
     public static void main(String[] args) {
         Gamer gamer = new Gamer(100);               // 最初的所持金钱数为100
