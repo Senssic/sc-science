@@ -1,7 +1,23 @@
 package com.sc.science.designmode.avoidwaste.proxy;
 
+/**
+ * 被代理抽象接口
+ *
+ * @author qiss
+ */
 public interface Printable {
-    public abstract void setPrinterName(String name);   // 设置名字
-    public abstract String getPrinterName();            // 获取名字
-    public abstract void print(String string);          // 显示文字（打印输出）
+    /**
+     * 获取名字
+     */
+    public abstract String getPrinterName();
+
+    /**
+     * 设置名字
+     */
+    public abstract void setPrinterName(String name);
+
+    /**
+     * 显示文字（打印输出）
+     */
+    public abstract void print(String string);
 }
