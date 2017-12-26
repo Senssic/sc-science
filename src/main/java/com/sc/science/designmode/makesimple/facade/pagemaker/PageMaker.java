@@ -4,9 +4,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * 门面,提供高层接口调用各个系统接口
+ *
+ * @author qiss
+ */
 public class PageMaker {
     private PageMaker() {   // 防止外部new出PageMaker的实例，所以声明为private方法
     }
+
     public static void makeWelcomePage(String mailaddr, String filename) {
         try {
             Properties mailprop = Database.getProperties("maildata");

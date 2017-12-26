@@ -4,10 +4,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * 系统一 提供getProperties接口
+ *
+ * @author qiss
+ */
 public class Database {
-    private Database() {    // 防止外部new出Database的实例，所以声明为private方法
+    private Database() {
     }
-    public static Properties getProperties(String dbname) { // 根据数据库名获取Properties
+
+    public static Properties getProperties(String dbname) {
         String filename = dbname + ".txt";
         Properties prop = new Properties();
         try {
