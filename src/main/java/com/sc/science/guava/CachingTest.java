@@ -55,13 +55,20 @@ public class CachingTest {
                         }
                 );
 
+
+        //刷新key为1的缓存
+        studentCache.refresh(1);
+
         for (int i=0;i<20;i++) {
+
             //从缓存中得到数据，由于我们没有设置过缓存，所以需要通过CacheLoader加载缓存数据
-            Account student = studentCache.get(1);
+            Account student = studentCache.get(1);//如果是load中没有检查异常则使用getUncheck抛出异常,get会抛出异常
             System.out.println(student);
             //休眠1秒
             TimeUnit.SECONDS.sleep(1);
         }
+
+
 
         System.out.println("cache stats:");
         //最后打印缓存的命中率等 情况
