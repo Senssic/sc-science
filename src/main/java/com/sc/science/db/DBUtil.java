@@ -1,6 +1,8 @@
 package com.sc.science.db;
 
-import org.apache.commons.collections4.MapUtils;
+
+import com.sc.science.utils.MapUtils;
+
 import org.apache.commons.dbutils.BasicRowProcessor;
 import org.apache.commons.dbutils.BeanProcessor;
 import org.apache.commons.dbutils.QueryRunner;
