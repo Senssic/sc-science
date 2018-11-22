@@ -1,7 +1,7 @@
 package com.sc.science.db;
 
 
-import com.sc.science.utils.MapUtils;
+import com.sc.science.temp.utils.MapUtils;
 
 import org.apache.commons.dbutils.BasicRowProcessor;
 import org.apache.commons.dbutils.BeanProcessor;

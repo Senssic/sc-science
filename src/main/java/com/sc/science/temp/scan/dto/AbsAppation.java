@@ -1,4 +1,4 @@
-package com.sc.science.scan.dto;
+package com.sc.science.temp.scan.dto;
 
 import java.io.Serializable;
 

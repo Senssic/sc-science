@@ -1,6 +1,7 @@
-package com.sc.science.scan.api;
+package com.sc.science.temp.scan.api;
 
-import java.io.File;
+import com.sc.science.temp.scan.dto.AbsAppation;
+
 import java.io.IOException;
 
 /**
@@ -11,12 +12,7 @@ import java.io.IOException;
  * @see: [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-public interface IHandle {
-/**
-     * 处理方式
-     */
-    public void doHandle(File file) throws IOException;
+public interface IOutPut {
 
-
-
+    public void writeOut(AbsAppation absAppation) throws IOException;
 }

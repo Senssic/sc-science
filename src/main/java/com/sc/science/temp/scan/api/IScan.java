@@ -1,4 +1,4 @@
-package com.sc.science.scan.api;
+package com.sc.science.temp.scan.api;
 
 /**
  * <一句话功能简述>

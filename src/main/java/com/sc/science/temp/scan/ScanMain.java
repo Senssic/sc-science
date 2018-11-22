@@ -1,6 +1,6 @@
-package com.sc.science.scan;
+package com.sc.science.temp.scan;
 
-import com.sc.science.scan.api.IScan;
+import com.sc.science.temp.scan.api.IScan;
 
 /**
  * <一句话功能简述>
@@ -12,7 +12,7 @@ import com.sc.science.scan.api.IScan;
  */
 public class ScanMain {
     public static void main(String[] args) {
-        IScan scan = new FileScan("C:\\Users\\Administrator\\Desktop\\prelog");
+        IScan scan = new FileScan("C:\\Users\\qiss\\Desktop\\prelog\\sensen");
 
 
         scan.doScan(new RegHandle(new DbOutPut()));
