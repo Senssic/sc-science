@@ -9,7 +9,7 @@ package com.sc.science.arithmetic.swordoffer;
  * 请完成一个函数，输入这样的一个二维数组和一个整数，
  * 判断数组中是否含有该整数。
  */
-public class Solution01 {
+public class day01_二维数组中的二分查找 {
 
     /**
      * 四角选择一个角进行搜索,一般选择右上或左下进行搜索
@@ -20,15 +20,20 @@ public class Solution01 {
      * @return
      */
     public static boolean Find(int target, int[][] array) {
-        int col = array.length-1;
+        int rows = array.length;
+        int cols = array[0].length;
+        if (array==null || rows<1 || cols<1){
+            return false;
+        }
         int row = 0;
-        while((col >= 0)&& (row < array[0].length)){
-            if(array[col][row] > target){
-                col--;
-            }else if(array[col][row] < target){
-                row++;
-            }else{
+        int col = cols-1;
+        while (row<rows && col>=0){
+            if (array[row][col] == target){
                 return true;
+            } else if (array[row][col] < target){
+                row++;
+            } else {
+                col--;
             }
         }
         return false;
@@ -42,10 +47,10 @@ public class Solution01 {
                 {4,7,10,13},
                 {6,8,11,15}
         };
-        System.out.println("-->" +Solution01.Find(4,array));
+        System.out.println("-->" + Find(4,array));
         int ars[][]={};
-        System.out.println("-->" +ars.length);
-        System.out.println("-->" +ars[0].length);
+        System.out.println("-->" + Find(4,ars));
+
 
     }
 }
