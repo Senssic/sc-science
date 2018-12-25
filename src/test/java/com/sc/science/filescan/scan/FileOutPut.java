@@ -1,7 +1,7 @@
-package com.sc.science.temp.scan;
+package com.sc.science.filescan.scan;
 
-import com.sc.science.temp.scan.api.IOutPut;
-import com.sc.science.temp.scan.dto.AbsAppation;
+import com.sc.science.filescan.scan.api.IOutPut;
+import com.sc.science.filescan.scan.dto.AbsAppation;
 
 import org.apache.commons.io.FileUtils;
 

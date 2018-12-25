@@ -1,6 +1,6 @@
-package com.sc.science.temp.scan;
+package com.sc.science.filescan.scan;
 
-import com.sc.science.temp.scan.api.IScan;
+import com.sc.science.filescan.scan.api.IScan;
 
 /**
  * <一句话功能简述>

@@ -1,7 +1,7 @@
-package com.sc.science.db;
+package com.sc.science.filescan.db;
 
 
-import com.sc.science.temp.utils.MapUtils;
+import com.sc.science.filescan.utils.MapUtils;
 
 import org.apache.commons.dbutils.BasicRowProcessor;
 import org.apache.commons.dbutils.BeanProcessor;

@@ -1,7 +1,7 @@
-package com.sc.science.temp.scan;
+package com.sc.science.filescan.scan;
 
-import com.sc.science.temp.scan.api.IHandle;
-import com.sc.science.temp.scan.api.IScan;
+import com.sc.science.filescan.scan.api.IHandle;
+import com.sc.science.filescan.scan.api.IScan;
 
 import java.io.File;
 import java.io.IOException;
