@@ -9,7 +9,7 @@ package com.sc.science.arithmetic.swordoffer;
  * 请完成一个函数，输入这样的一个二维数组和一个整数，
  * 判断数组中是否含有该整数。
  */
-public class day01_二维数组中的二分查找 {
+public class Day01_二维数组中的二分查找 {
 
     /**
      * 四角选择一个角进行搜索,一般选择右上或左下进行搜索
