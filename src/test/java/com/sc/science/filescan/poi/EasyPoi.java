@@ -1,6 +1,7 @@
-package com.sc.science.poi;
+package com.sc.science.filescan.poi;
 
-import com.sc.science.db.DBUtil;
+
+import com.sc.science.filescan.db.DBUtil;
 
 import java.io.File;
 import java.sql.Connection;

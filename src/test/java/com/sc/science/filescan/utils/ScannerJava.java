@@ -1,4 +1,4 @@
-package com.sc.science.temp.utils;
+package com.sc.science.filescan.utils;
 
 import org.apache.commons.io.FileUtils;
 

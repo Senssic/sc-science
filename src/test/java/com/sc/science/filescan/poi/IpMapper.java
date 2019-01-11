@@ -1,4 +1,4 @@
-package com.sc.science.poi;
+package com.sc.science.filescan.poi;
 
 
 import org.jsoup.helper.StringUtil;
