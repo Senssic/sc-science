@@ -1,7 +1,6 @@
 package com.sc.science.temp.translate;
 
 import com.alibaba.fastjson.JSON;
-import com.sc.science.db.DBUtil;
 
 import java.math.BigInteger;
 import java.sql.Connection;
@@ -19,7 +18,7 @@ public class TranslateDht {
 
     public static void main(String[] args) throws Exception {
 
-        Connection connection = DBUtil.openConn("MySQL", "139.224.114.xxx", "3306", "dht?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull", "root", "123456");
+        Connection connection = DBUtil.openConn("MySQL", "139.224.114.xxx", "3306", "dht?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull", "root", "senssic");
         if (connection == null || connection.isClosed()) {
             return;
         }
