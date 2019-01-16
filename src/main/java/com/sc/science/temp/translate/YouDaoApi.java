@@ -1,12 +1,11 @@
 package com.sc.science.temp.translate;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -18,53 +17,67 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 
 public class YouDaoApi {
 
     public static TransResult translate(String query) throws Exception {
-        String appKey = "4b01b1723c74cf7je";
+
+        String appKey = "xx";
         String salt = String.valueOf(System.currentTimeMillis());
         String from = "auto";
         String to = "zh-CHS";
-        String sign = md5(appKey + query + salt + "yNYsBO2fjBi4VEvetSfS9SDtHeqsp1EPo");
+        String sign = MD5Util.getMD5(appKey + query + salt + "xx");
         Map params = new HashMap();
         params.put("q", query);
         params.put("from", from);
         params.put("to", to);
-        params.put("sign", sign);
+        params.put("pid", appKey);
         params.put("salt", salt);
-        params.put("appKey", appKey);
-        String string=  requestForHttp("http://openapi.youdao.com/api", params);
+        params.put("sign", sign);
+
+
+        String string = requestForHttp("http://fanyi.sogou.com/reventondc/api/sogouTranslate", params);
+
         TransResult transResul = JSON.parseObject(string, TransResult.class);
         return transResul;
     }
 
     public static String requestForHttp(String url,Map requestParams) throws Exception{
+    /*    String requestBody="from=auto&to=zh-CHS&pid=4f4afa06d963e0aecaf552ff4e21988d&q="+requestParams.get("q")+"&sign="+requestParams.get("sign")+"&salt="+requestParams.get("salt");
+        System.out.println("-->" +requestBody);
+        HttpResponse response = Unirest.post("http://fanyi.sogou.com:80/reventondc/api/sogouTranslate")
+                .header("content-type", "application/x-www-form-urlencoded")
+                .header("accept", "application/json")
+                .body(requestBody)
+                .asString();
+        System.out.println("-->" +response.getBody());
+
+
+        return (String) response.getBody();*/
+        System.out.println("request:-->" +JSON.toJSONString(requestParams));
         String result = null;
         CloseableHttpClient httpClient = HttpClients.createDefault();
         /**HttpPost*/
         HttpPost httpPost = new HttpPost(url);
-        System.out.println(new JSONObject(requestParams).toString());
-        List params = new ArrayList();
-        Iterator it = requestParams.entrySet().iterator();
-        while (it.hasNext()) {
-            Entry en = (Entry) it.next();
-            String key = (String) en.getKey();
-            String value = (String) en.getValue();
-            if (value != null) {
-                params.add(new BasicNameValuePair(key, value));
-            }
-        }
-        httpPost.setEntity(new UrlEncodedFormEntity(params,"UTF-8"));
-        /**HttpResponse*/
-        CloseableHttpResponse httpResponse = httpClient.execute(httpPost);
+
+        List nvps = new ArrayList<>();
+        nvps.add(new BasicNameValuePair("from", (String) requestParams.get("from")));
+        nvps.add(new BasicNameValuePair("to", (String) requestParams.get("to")));
+        nvps.add(new BasicNameValuePair("pid", (String) requestParams.get("pid")));
+        nvps.add(new BasicNameValuePair("q", (String) requestParams.get("q")));
+        nvps.add(new BasicNameValuePair("sign", (String) requestParams.get("sign")));
+        nvps.add(new BasicNameValuePair("salt", (String) requestParams.get("salt")));
+        httpPost.setEntity(new UrlEncodedFormEntity(nvps, "utf-8"));
+        HttpRequestBase requestBase = httpPost;
+        requestBase.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36");
+        requestBase.addHeader("content-type", "application/x-www-form-urlencoded");
+        requestBase.addHeader("accept", "application/json");
+        CloseableHttpResponse httpResponse = httpClient.execute(requestBase);
         try{
-            HttpEntity httpEntity = httpResponse.getEntity();
+            org.apache.http.HttpEntity httpEntity = httpResponse.getEntity();
             result = EntityUtils.toString(httpEntity, "utf-8");
             EntityUtils.consume(httpEntity);
         }finally{
@@ -76,6 +89,7 @@ public class YouDaoApi {
                 e.printStackTrace();
             }
         }
+        System.out.println("response:-->" +result);
         return result;
     }
 
