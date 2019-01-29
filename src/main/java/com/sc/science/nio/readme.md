@@ -1,3 +1,37 @@
+# IO,NIO,NIO.2
+
+# Buffer缓冲器
+
+# Channel通道
+
+# Selector选择器
+
+# Charset字符集
+
+# ByteOrder字节序
+
+# 新的文件API
+
+https://www.zfl9.com/java-nio.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CPU大量的无效循环-写事件：
 
 只要 TCP 连接适合数据写入时就会产生 OP_WRITE 事件，基本上 95% 以上的时间都会产生 OP_WRITE 事件。
