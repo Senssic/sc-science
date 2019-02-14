@@ -20,7 +20,7 @@
 10.  基数排序
     
 
-![](./pic_001.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_001.gif)
 
 ###   
 
@@ -47,7 +47,7 @@
 
 #### 0.3 算法总结
 
-![](./pic_002.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_002.gif)
 
 **图片名词解释：**
 
@@ -62,7 +62,7 @@
 
 #### 0.5 算法分类
 
-![](./pic_001.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_001.gif)
 
 #### 0.6 比较和非比较的区别
 
@@ -93,7 +93,7 @@
 
 **1.2 动图演示**
 
-![](./pic_003.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_003.gif)
 
 #### 1.3 代码实现
 
@@ -122,7 +122,7 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 #### **2.2 动图演示**
 
-![](./pic_004.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_004.gif)
 
 2.3 代码实现
 
@@ -156,11 +156,11 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 #### 3.2 动图演示
 
 1  
-![](./pic_005.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_005.gif)
 
 2.更直观点
 
-![](./pic_006.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_006.gif)
 
 #### 3.2 代码实现
 
@@ -193,11 +193,11 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 #### 4.2.1 动图演示
 
-![](./pic_007.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_007.gif)
 
 #### 4.2.2 过程演示
 
-![](./pic_008.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_008.gif)
 
 #### 4.3 代码实现
 
@@ -228,11 +228,11 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 1  
 
-![](./pic_09.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_09.gif)
 
 2
 
-![](./pic_010.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_010.gif)
 
 #### 5.3 代码实现
 
@@ -261,11 +261,11 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 1 欢快点的  
 
-![](./pic_011.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_011.gif)
 
 2 正经点的
 
-![](./pic_012.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_012.gif)
 
 #### 6.3 代码实现
 
@@ -292,11 +292,11 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 1 欢乐点的  
 
-![](./pic_013.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_013.gif)
 
 2 正经点的
 
-![](./pic_014.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_014.gif)
 
 #### 7.3 代码实现
 
@@ -360,7 +360,7 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 #### 9.2 图片演示
 
-![](./pic.png)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic.png)
 
 #### 9.3 代码实现
 
@@ -389,7 +389,7 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 #### 10.2 动图演示
 
-![](./pic_017.gif)
+![](https://github.com/Senssic/sc-science/blob/master/src/main/java/com/sc/science/arithmetic/sort/pic_017.gif)
 
 #### 10.3 代码实现
 

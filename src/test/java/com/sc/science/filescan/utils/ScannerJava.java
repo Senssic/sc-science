@@ -29,7 +29,7 @@ interface FileScan {
 public class ScannerJava {
     private static final String scanJarPath = "F:\\temp";
     private static final String outUnJarPath = "F:\\tempcode";
-    private static final String jarEntryStartWith[] = {"com/fg/user/service", "com/cjia/user/service"};
+    private static final String jarEntryStartWith[] = {"com/fg/user/service", "com/test/user/service"};
     private static final Pattern patternClass = Pattern.compile("interface (.*)\\{");
     private static final Pattern patternMethod = Pattern.compile("public (.*);");
 

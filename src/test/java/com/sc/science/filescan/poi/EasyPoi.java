@@ -27,7 +27,7 @@ public class EasyPoi {
         params.setTitleRows(0);
         params.setHeadRows(1);
         List<IpMapper> list = ExcelImportUtil.importExcel(
-                new File("C:\\Users\\qiss\\Desktop\\CJIA\\01.xlsx"),
+                new File("C:\\Users\\qiss\\Desktop\\test\\01.xlsx"),
                 IpMapper.class, params);
 
         for (IpMapper ipMapper : list) {
